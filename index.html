@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Isabel Martínez-Barona García | CV</title>
+  <style>
+    
+    /* --- Basic Reset --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.4; color: #333; background: #f9f9f9; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: none; }
+
+    ul.desc { list-style-type: disc; margin-left: 1.25rem; }
+    ul.desc ul { list-style-type: circle; margin-left: 1.5rem; }
+
+
+    /* --- Full-width Navigation Bar --- */
+    nav { background: #f4f4f4; width: 100%; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1); }
+    .nav-container { max-width: 800px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; }
+    nav a { flex: 1; text-align: center; padding: 0.75rem 0; font-size: 0.9rem; font-weight: bold; color: #555; display: block; }
+    nav a.active { color: #000; }
+    nav a.active::after { content: ''; display: block; margin: 0.15rem auto 0; width: 40%; height: 3px; background: #000; }
+
+    /* --- Containers --- */
+    header, section { padding: 1.5rem 1rem; max-width: 800px; margin: auto; background: #fff; margin-bottom: 1rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { margin-bottom: 1rem; font-size: 1.6rem; color: #222; }
+    h3 { margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.2rem; color: #444; border-bottom: 1px solid #eee; padding-bottom: 0.2rem; }
+    ul { list-style: none; }
+
+    /* --- About Centered --- */
+    #about { text-align: center; }
+    .profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; }
+    #about p { font-size: 0.95rem; width: 100%; text-align: center; }
+
+    /* --- Accordions --- */
+    details { margin-bottom: 0.75rem; }
+    summary { font-size: 1rem; font-weight: bold; cursor: pointer; padding: 0.6rem 0.8rem; background: #f0f0f0; border-radius: 4px; position: relative; }
+    summary::after { content: '▸'; position: absolute; right: 0.8rem; transition: transform 0.2s; }
+    details[open] summary::after { transform: rotate(90deg); }
+    details > div { padding: 0.8rem; border: 1px solid #eee; border-top: none; border-radius: 0 0 4px 4px; background: #fafafa; }
+    .meta { font-style: italic; color: #666; margin-bottom: 0.4rem; font-size: 0.85rem; }
+    .desc li { margin-bottom: 0.3rem; font-size: 0.9rem; }
+    .download-link { display: inline-block; margin-top: 0.4rem; font-size: 0.85rem; background: #e0e0e0; padding: 0.2rem 0.5rem; border-radius: 3px; }
+
+    /* Publications formatting */
+    #publications ul { padding: 0; }
+    #publications ul li { margin-bottom: 1.5rem; }
+    #publications .pub-item { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+    #publications .pub-item:last-child { border-bottom: none; }
+    #publications .pub-item strong { display: block; font-size: 0.95rem; margin-bottom: 0.1rem; }
+    #publications .pub-item .pub-meta { font-size: 0.85rem; color: #666; }
+
+    /* Awards formatting */
+    #development ul.award-list li { display: flex; justify-content: space-between; align-items: baseline; padding: 0.8rem 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+    #development ul.award-list li:last-child { border-bottom: none; }
+    #development .award-date, #development .award-source { font-style: italic; color: #666; }
+    #development .award-title { font-weight: bold; flex: 1; text-align: left; margin: 0 0.8rem; }
+
+    /* Contact Footer */
+    .contact-footer { background: #333; color: #fff; padding: 2rem 1rem; }
+    .contact-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px; margin: auto; }
+    .contact-item { display: flex; align-items: center; margin: 0.5rem 1.5rem; font-size: 1rem; }
+    .contact-item i { margin-right: 0.5rem; font-size: 1.2rem; }
+
+    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #666; }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="#about">About</a>
+      <a href="#research" class="active">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#development">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="about">
+    <img src="files/yo.jpeg" alt="Isabel Martínez-Barona García" class="profile-pic">
+    <h1>Isabel Martínez-Barona García</h1>
+    <p>Final-year Computer Science (MInf) student at The University of Edinburgh, specialising in machine learning and data analysis. Passionate about predictive models, and applying data science techniques to real-world challenges.</p>
+  </header>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <h3>Projects</h3>
+    <details>
+      <summary>Human Activity Recognition &amp; Sleep Classification</summary>
+      <div>
+        <div class="meta">Python, TensorFlow &mdash; Sep 2024 – Apr 2025</div>
+        <ul class="desc">
+          <li>Objective: Develop wearable-sensor-based methods to assess sleep quality in COPD patients using the RESpeck device.</li>
+          <li>Hierarchical HAR pipeline:
+            <ul>
+              <li>Static vs. dynamic activity classifier: CNN achieved 97% test accuracy.</li>
+              <li>Fine-grained static posture model: 95% accuracy distinguishing back/side/stomach positions.</li>
+              <li>Dynamic activity model with transfer learning: improved from 50.7% → 71% accuracy.</li>
+            </ul>
+          </li>
+          <li>Sleep episode classification using FAMD + K-Means on combined HAR labels &amp; continuous features to segment sleep/wake.</li>
+          <li>Extracted nightly sleep metrics (duration, efficiency, latency, WASO, position changes) and correlated with cough frequency &amp; CAT scores.</li>
+          <li>Key findings: Supine sleep correlates with more nocturnal coughing; significant positive correlations between sleep efficiency, latency, positional changes, and CAT symptom score (p &lt; 0.05).</li>
+        </ul>
+        <a href="files/Human_Activity_Recognition_and_Sleep_Episode_Classification_Methods_to_Analyse_Sleep_Quality_in_COPD_Patients.pdf" download class="download-link">Download full report</a>
+      </div>
+    </details>
+    
+    
+
+    <details>
+      <summary>IoT Systems for Live Activity Classification</summary>
+      <div>
+        <div class="meta">Python, Deep Learning, Machine Learning, Android Studio — Jan 2025</div>
+        <ul class="desc">
+          <li>Objective: Build, in a team of 3, an IoT activity-recognition system classifying eleven physical activities (stairs, running, walking, shuffle, lying in four orientations, sitting/standing, miscellaneous) and four respiratory states (coughing, hyperventilating, normal, other) via wearable RESpeck &amp; Thingy sensors.</li>
+          <li>Methods:
+            <ul>
+              <li>1D CNNs on RESpeck data for eleven activities; separate CNN on Thingy data to distinguish sitting vs. standing.</li>
+              <li>Evaluated LSTM, SVM, Random Forest—1D CNN proved most accurate (>90% static, >80% respiratory).</li>
+              <li>Android app (Kotlin + TensorFlow Lite) for real-time classification, data recording, visualisation, and history.</li>
+            </ul>
+          </li>
+          <li>Results:
+            <ul>
+              <li>Cross-validated CNNs delivered >90% accuracy on static/dynamic activities and >80% on respiratory states.</li>
+              <li>Real-time app classification averaged 99% for physical activities and 84% for respiratory conditions.</li>
+            </ul>
+          </li>
+        </ul>
+        <a href="files/pdiot.pdf" download class="download-link">Download full report</a>
+      </div>
+    </details>
+    
+
+    <details>
+      <summary>Computer Vision: Semantic Segmentation</summary>
+      <div>
+        <div class="meta">Python, PyTorch, UNet, CLIP, Gradio — April 2025</div>
+        <ul class="desc">
+          <li>Objective: Compare segmentation approaches (UNet, autoencoder pretraining, CLIP-based features, prompt-based model) on the Oxford-IIIT Pet Dataset.</li>
+          <li>Preprocessing &amp; Augmentation:
+            <ul>
+              <li>Resize images/masks to 224×224, normalise with ImageNet stats.</li>
+              <li>Augment with flips, rotations, random crops, elastic transforms, grid distortions.</li>
+            </ul>
+          </li>
+          <li>Models evaluated:
+            <ul>
+              <li>UNet trained with weighted cross-entropy — achieved mean IoU ~0.73, Dice 0.78, pixel accuracy 0.91.</li>
+              <li>Autoencoder pretraining (simple, improved, UNet-based) — simple AE IoU ~0.57, improved AE IoU ~0.37, UNet-AE IoU ~0.44.</li>
+              <li>CLIP-based segmentation using ViT features — mean IoU ~0.83, Dice 0.91, pixel accuracy 0.93.</li>
+              <li>Prompt-based model with CLIP + Gaussian point prompts — mean IoU ~0.89, Dice 0.94, pixel accuracy 0.94; interactive Gradio demo built.</li>
+            </ul>
+          </li>
+          <li>Robustness: Prompt-based model remained above 0.80 Dice under noise, blur, contrast, occlusion.</li>
+          <li>Key takeaway: CLIP features + prompt conditioning deliver top segmentation quality and interactivity, outperforming traditional architectures.</li>
+        </ul>
+        <a href="files/cv.pdf" download class="download-link">Download full report</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Automated Camera Control for 3rd-View Video Games</summary>
+      <div>
+        <div class="meta">Unity, C# — Sep 2023 – Apr 2024</div>
+        <ul class="desc">
+          <li>Objective: Evaluate and improve automated target‑locking in third‑view games to reduce player frustration when multiple enemies are present.</li>
+          <li>Implemented four new locking systems—health‑based, threat‑based, weapon‑based, and timed distance‑switching—in a controlled Unity environment.</li>
+          <li>Tested with 18 participants (novice, casual, expert), collecting qualitative feedback and quantitative performance metrics.</li>
+          <li>Findings: Standard distance locking was often frustrating; dynamic approaches were preferred—threat‑based by novices/casuals, weapon‑based by experts.</li>
+          <li>Key takeaway: Context‑sensitive lock‑on enhances player satisfaction and in‑game performance, highlighting the need for adaptive camera control in modern titles.</li>
+        </ul>
+        <a href="files/Automated_Camera_Control_for_3rd_View_Video_Games.pdf" download class="download-link">Download full report</a>
+      </div>
+    </details>
+
+
+    <details>
+      <summary>Enhancing Sheep Detection Techniques with Deep Learning</summary>
+      <div>
+        <div class="meta">Python, TensorFlow, SSD — March 2024</div>
+        <ul class="desc">
+          <li>Objective: Automate sheep counting and detection using deep learning on a new diverse video dataset considering occlusion and sheep behaviours.</li>
+          <li>Dataset: 149,327 frames from 417 videos labelled for five activities (grazing, running, walking, standing, sitting) and occlusion status.</li>
+          <li>Method: Transfer learning on SSD300-VGG16 pretrained on COCO dataset, with experiments in data augmentation (cropping) and optimisation (SGD, Adam).</li>
+          <li>Results: SSD model consistently outperformed Faster R-CNN across IoU thresholds; fine-tuned approaches improved MAE/MSE and true positives but faced challenges under heavy occlusion.</li>
+          <li>Key takeaway: Behavioural and contextual factors critically affect detection accuracy; future work to explore advanced schedulers, model architecture changes, and larger annotated sets.</li>
+        </ul>
+        <a href="files/sheep.pdf" download class="download-link">Download full report</a>
+      </div>
+    </details>
+
+    <h3>Publications</h3>
+    <ul id="publications">
+      <li class="pub-item">
+        <strong>Characterisation of Sleep Quality in COPD patients using the chest-wearable Respeck</strong>
+        <span class="pub-meta">Proc. 19th Int. Symp. on Medical Info &amp; Communication Tech (ISMICT), IEEE &mdash; May 2025</span>
+      </li>
+      <li class="pub-item">
+        <strong>Cough Analysis in Sleep for COPD patients</strong>
+        <span class="pub-meta">Under peer review</span>
+      </li>
+      <li class="pub-item">
+        <strong>Analysis and Correlation of Breathing and Sleep features in COPD patients</strong>
+        <span class="pub-meta">Under peer review</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <h3>Work Experience</h3>
+    <details>
+      <summary>Outreach Team Member</summary>
+      <div>
+        <div class="meta">Endeavour Rocketry Society &mdash; Sep 2023 – Sep 2024</div>
+        <ul class="desc">
+          <li>Member of the University's rocketry society, focusing on promoting interest in the space industry.</li>
+          <li>Organised and delivered STEM workshops to students across various age groups.</li>
+          <li>Promoted interest in the space industry through engaging presentations.</li>
+          <li>Adapted technology-related content to different audiences.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>Computing Support Intern</summary>
+      <div>
+        <div class="meta">The University of Edinburgh &mdash; Jun 2023 – Aug 2023</div>
+        <ul class="desc">
+          <li>Provided technical support and performed system updates across university hardware/software.</li>
+          <li>Automated repetitive tasks in Python, reducing manual workload.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>Private Maths Tutor</summary>
+      <div>
+        <div class="meta">Self-employed &mdash; Sep 2018 – Mar 2020</div>
+        <ul class="desc">
+          <li>Delivered one-on-one math tutoring, boosting students' grades and confidence.</li>
+        </ul>
+      </div>
+    </details>
+
+    <h3>Technical Projects</h3>
+    <details>
+      <summary>REST Service</summary>
+      <div>
+        <div class="meta">Java, Spring Boot, RabbitMQ, Kafka, Redis, Docker &mdash; 2025</div>
+        <ul class="desc">
+          <li>Developed a Java RESTful service integrating messaging systems, Redis caching, and Azure Blob storage</li>
+          <li>Packaged solution as Docker image.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Coink Automated Piggy Bank</summary>
+      <div>
+        <div class="meta">Dart, Flutter, Python, Raspberry Pi &mdash; 2023</div>
+        <ul class="desc">
+          <li>In a group of eight, we created Coink, a fun educational smart piggy bank with an ATM-style withdrawal mechanism and companion banking app to teach children money management.</li>
+          <li>Software: Completed app withdrawal interface, added shop items/categories, item equipping, balanced coin rewards and shop prices, and integrated Raspberry Pi API.</li>
+          <li>Hardware: Swapped force-sensitive resistors for infrared sensors, developed withdrawal system with updated coin tubes, reduced motor count, and implemented pulley-based banknote storage.</li>
+          <li>Project management: Managed tasks via Trello and Slack, organised sub-teams by expertise, and ensured each member learnt new skills (Flutter, circuit design, 3D modeling, etc.).</li>
+          <li>Outcomes: Achieved reliable coin/note sorting and dispensing; IR sensor tests showed 100% detection in trials; app passed unit tests and supported multi-user connectivity over Wi-Fi.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>PizzaDronz</summary>
+      <div>
+        <div class="meta">Java, JSON, GeoJSON, Maven, REST &mdash; 2022</div>
+        <ul class="desc">
+          <li>Designed and built a simulated drone pizza delivery platform, using a RESTful server to manage and fetch operational data.</li>
+          <li>Implemented a drone navigation algorithm based on a Weighted A* search to plan efficient delivery routes while respecting battery constraints and no-fly zones.</li>
+          <li>Integrated a RESTful API to dynamically retrieve key information: restaurant coordinates, restricted airspace boundaries, and active delivery requests.</li>
+        </ul>
+      </div>
+    </details>
+  
+    <details>
+      <summary>Events App</summary>
+      <div>
+        <div class="meta">Java &mdash; 2020</div>
+        <ul class="desc">
+          <li>Built an app that allows people to find and book events, while allowing companies to create them.</li>
+          <li>Used a plan-driven development methodology, providing thorough documentation, including UML and sequence diagrams.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section id="development">
+    <h2>Awards</h2>
+    <ul class="award-list">
+      <li><span class="award-date">Sep 2023</span><span class="award-title">The Edinburgh Award</span><span class="award-source">University of Edinburgh</span></li>
+      <li><span class="award-date">Jan 2023</span><span class="award-title">Beginning C++ Programming - From Beginner to Beyond</span><span class="award-source">Udemy</span></li>
+      <li><span class="award-date">Aug 2022</span><span class="award-title">The Complete SQL Bootcamp 2022: Zero to Hero</span><span class="award-source">Udemy</span></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming Languages:</strong> Proficient in Python, Java; Experience with C, C++, C#, Haskell, SQL, Dart.</li>
+      <li><strong>Tools:</strong> Docker, Android Studio, Kafka, RabbitMQ, Git, Cloud Platforms, Blender, Unity, Figma.</li>
+      <li><strong>Languages:</strong> Spanish (native), English (bilingual), Italian (intermediate).</li>
+      <li><strong>Soft skills:</strong> Teamwork, time management, organisation, communication.</li>
+    </ul>
+  </section>
+
+  <div class="contact-footer" id="contact">
+    <div class="contact-container">
+      <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:isabelmbg2002@gmail.com">isabelmbg2002@gmail.com</a></div>
+      <div class="contact-item"><i class="fas fa-phone"></i>+34 605 305 440</div>
+      <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/isabel-martinez-barona/">linkedin.com/in/isabel-martinez-barona</a></div>
+      <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/isabel-martinez-barona">github.com/isabel-martinez-barona</a></div>
+    </div>
+  </div>
+
+</body>
+</html>
+
